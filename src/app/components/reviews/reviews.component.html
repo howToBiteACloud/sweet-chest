@@ -1,0 +1,30 @@
+@let reviews = reviews$ | async;
+
+<div class="container">
+    <span class="title">Почитайте отзывы довольных клиентов</span>
+
+    @if (reviews) {
+        <app-carousel>
+            @for (review of reviews; track review.id) {
+                <div class="review-container">
+                    <div class="review-text">
+                        <div>{{ review.title }}</div>
+                        <div>{{ review.review }}</div>
+                        <a>Читать отзыв полностью</a>
+                    </div>
+                    <div class="reviewer-photo-and-data">
+                        <img
+                            class="reviewer-photo"
+                            [alt]="review.name"
+                            [src]="review.photo"
+                        />
+                        <div class="reviewer-data">
+                            <div>{{ review.name }}</div>
+                            <div>{{ review.city }}</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </app-carousel>
+    }
+</div>

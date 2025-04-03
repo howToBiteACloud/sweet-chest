@@ -1,3 +1,19 @@
 {
-  "singleQuote": true
+    "singleQuote": true,
+    "tabWidth": 4,
+    "bracketSpacing": true,
+    "overrides": [
+        {
+            "files": "*.json",
+            "options": {
+                "singleQuote": false
+            }
+        },
+        {
+            "files": "*.html",
+            "options": {
+                "parser": "angular"
+            }
+        }
+    ]
 }

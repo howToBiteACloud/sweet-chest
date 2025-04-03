@@ -1,0 +1,27 @@
+@let catalog = catalog$ | async;
+
+<span class="catalog-title">Для любых событий и дорогих вам людей</span>
+
+@if (catalog) {
+    <div class="catalog-container">
+        @for (item of catalog; track item.id) {
+            <div class="catalog-item">
+                <img
+                    class="catalog-item-image"
+                    [alt]="item.name"
+                    [src]="item.img"
+                />
+                <div class="catalog-item-info">
+                    <div class="catalog-item-name">{{ item.name }}</div>
+                    <div class="catalog-item-description">
+                        {{ item.description }}
+                    </div>
+                    <div class="catalog-item-price">{{ item.price }} ₽/шт.</div>
+                    <button class="catalog-button" appButton size="m">
+                        Заказать
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+}
