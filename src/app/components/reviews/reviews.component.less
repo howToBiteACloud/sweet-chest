@@ -1,20 +1,135 @@
 :host {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(/background-image-reviews.svg);
     background-color: #081130;
+    overflow: hidden;
+    color: #2e363e;
 }
 
-.container {
+.reviews-container {
     width: var(--container-width);
-    margin: 0 auto;
+    padding-top: 24.5rem;
+}
+
+.quote {
+    width: 2.5rem;
+
+    .review-element_active & {
+        width: 1.979rem;
+    }
 }
 
 .title {
     font-size: 3rem;
     font-weight: 500;
     color: #ffffff;
+    text-align: center;
 }
 
-.review-container {
+.carousel {
+    width: 120rem;
+    margin-top: 5rem;
+    padding-bottom: 27.75rem;
+}
+
+.review-element {
     display: flex;
+    justify-content: space-around;
+    flex-shrink: 0;
+    width: 58.375rem;
+    min-width: 58.375rem;
+    height: 30.396rem;
+    background-color: #ffffff;
+    padding: 3.463rem 7.063rem;
+    box-sizing: border-box;
+    opacity: 10%;
+
+    &_active {
+        width: var(--container-width);
+        height: 38.438rem;
+        padding: 4.375rem 8.938rem;
+        opacity: 100%;
+    }
+}
+
+.review-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 22.75rem;
+
+    .review-element_active & {
+        gap: 1.5rem;
+        width: 28.75rem;
+    }
+}
+
+.review-title {
+    font-size: 1.484rem;
+    font-weight: 500;
+    line-height: 143%;
+
+    .review-element_active & {
+        font-size: 1.875rem;
+    }
+}
+
+.review-contents {
+    font-size: 0.742rem;
+    max-width: 21.25rem;
+    line-height: 170%;
+
+    .review-element_active & {
+        font-size: 0.938rem;
+        max-width: 26.875rem;
+    }
+}
+
+.reviewer-photo-and-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .review-element_active & {
+        gap: 1.875rem;
+    }
+}
+
+.reviewer-photo {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 18.75rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    .review-element_active & {
+        width: 23.75rem;
+    }
+}
+
+.reviewer-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.063rem;
+}
+
+.reviewer-name {
+    font-size: 1.039rem;
+
+    .review-element_active & {
+        font-size: 1.313rem;
+    }
+}
+
+.reviewer-city {
+    font-size: 0.791rem;
+    color: #a6aeb6;
+
+    .review-element_active & {
+        font-size: 1rem;
+    }
 }
